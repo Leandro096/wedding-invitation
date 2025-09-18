@@ -1,0 +1,85 @@
+---
+export interface Props {
+  gifts: {
+    accounts: Array<{
+      name: string;
+      cedula: string;
+      bank: string;
+      accountType: string;
+      accountNumber: string;
+    }>;
+    registry: {
+      name: string;
+      url: string;
+    };
+    message: string;
+  };
+}
+
+const { gifts } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-gradient-to-b from-accent to-background">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Title and message -->
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl md:text-4xl font-primary font-bold text-primary mb-6">
+          Regalos
+        </h2>
+        <p class="text-lg md:text-xl font-secondary text-text leading-relaxed">
+          {gifts.message}
+        </p>
+      </div>
+      
+      <!-- Bank accounts -->
+      <div class="mb-8 fade-in">
+        <h3 class="text-2xl font-primary font-bold text-primary text-center mb-6">
+          Cuentas de ahorro:
+        </h3>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          {gifts.accounts.map((account) => (
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-secondary">
+              <div class="space-y-3">
+                <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                  <span class="font-secondary font-semibold text-text">Nombre:</span>
+                  <span class="font-secondary text-primary">{account.name}</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                  <span class="font-secondary font-semibold text-text">Cédula:</span>
+                  <span class="font-secondary text-text">{account.cedula}</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                  <span class="font-secondary font-semibold text-text">Banco:</span>
+                  <span class="font-secondary text-text">{account.bank}</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-secondary font-semibold text-text">{account.accountType}:</span>
+                  <span class="font-secondary font-bold text-primary">{account.accountNumber}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Registry -->
+      <div class="text-center fade-in">
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 border border-secondary inline-block">
+          <h3 class="text-xl font-primary font-bold text-primary mb-4">
+            Lista de Regalos
+          </h3>
+          <a 
+            href={gifts.registry.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-primary text-white px-8 py-3 rounded-full font-secondary font-semibold btn-hover card-hover text-lg"
+          >
+            {gifts.registry.name}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

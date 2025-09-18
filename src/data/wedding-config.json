@@ -1,0 +1,93 @@
+{
+  "couple": {
+    "partner1": {
+      "name": "Sarah",
+      "fullName": "Sarah Guzman"
+    },
+    "partner2": {
+      "name": "Smill",
+      "fullName": "Smill Perez"
+    }
+  },
+  "event": {
+    "date": {
+      "dayName": "Sábado",
+      "month": "Diciembre",
+      "year": "2025",
+      "day": "20",
+      "time": "4:30",
+      "period": "P.M."
+    },
+    "ceremony": {
+      "name": "Parroquia La Asunción del Señor",
+      "address": "Dirección de la ceremonia",
+      "mapUrl": "https://maps.google.com/?q=Parroquia+Jesus+Maestro"
+    },
+    "reception": {
+      "name": "Club Banreservas",
+      "address": "Dirección de la recepción", 
+      "mapUrl": "https://maps.google.com/?q=Club+Banreservas"
+    }
+  },
+  "quote": {
+    "text": "Por eso deja el hombre a su padre y a su madre y se une a su mujer, y se hacen una sola carne.",
+    "reference": "Génesis 2:24"
+  },
+  "confirmation": {
+    "deadline": "30 de julio",
+    "whatsappNumber": "+1234567890",
+    "message": "Hola! Confirmo mi asistencia a la boda de [NOMBRES]. ¡Allí estaré!"
+  },
+  "gifts": {
+    "accounts": [
+      {
+        "name": "Naroly León",
+        "cedula": "402-0921351-7",
+        "bank": "Banco BHD",
+        "accountType": "Cuenta de ahorros RD$",
+        "accountNumber": "30239040012"
+      },
+      {
+        "name": "Naroly León", 
+        "cedula": "402-0921351-7",
+        "bank": "Banreservas",
+        "accountType": "Cuenta de ahorros RD$",
+        "accountNumber": "9605358984"
+      }
+    ],
+    "registry": {
+      "name": "Casa Cuesta",
+      "url": "https://www.casacuesta.com.do/"
+    },
+    "message": "Nuestro mejor regalo es su presencia, sin embargo, si desea hacernos un presente puede utilizar cualquiera de los siguientes medios:"
+  },
+  "dressCode": {
+    "title": "Código de vestimenta",
+    "description": "Queremos que cada uno de ustedes se sienta especial y luzca espectacular en nuestro día.",
+    "restrictions": "(No colores pasteles, ni blanco)",
+    "note": "Aunque adoramos a los pequeños, esta celebración será exclusivamente para adultos."
+  },
+  "theme": {
+    "colors": {
+      "primary": "#8B4513",
+      "secondary": "#D2B48C",
+      "accent": "#F5DEB3",
+      "text": "#2C1810",
+      "background": "#FFF8DC"
+    },
+    "fonts": {
+      "primary": "Playfair Display",
+      "secondary": "Source Sans Pro"
+    }
+  },
+  "images": {
+    "hero": "https://images.pexels.com/photos/1024977/pexels-photo-1024977.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "couple": "/images/couple-photo.jpg",
+    "decorative": "/images/decorative-element.png"
+  },
+  "images-example": {
+    "hero": "/images/hero-bg.jpg",
+    "couple": "/images/couple-photo.jpg",
+    "decorative": "/images/decorative-element.png"
+  }
+}

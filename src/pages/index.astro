@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Quote from '../components/Quote.astro';
+import EventInfo from '../components/EventInfo.astro';
+import Gifts from '../components/Gifts.astro';
+import Confirmation from '../components/Confirmation.astro';
+import DressCode from '../components/DressCode.astro';
+
+// Import wedding configuration
+import weddingConfig from '../data/wedding-config.json';
+
+// Prepare data for components
+const coupleNames = `${weddingConfig.couple.partner1.name} y ${weddingConfig.couple.partner2.name}`;
+---
+
+<Layout title={`Boda de ${coupleNames}`} description={`Invitación de boda de ${weddingConfig.couple.partner1.fullName} y ${weddingConfig.couple.partner2.fullName}`}>
+	<Hero 
+		couple={weddingConfig.couple}
+		date={weddingConfig.event.date}
+		heroImage={weddingConfig.images.hero}
+	/>
+	
+	<Quote quote={weddingConfig.quote} />
+	
+	<EventInfo 
+		ceremony={weddingConfig.event.ceremony}
+		reception={weddingConfig.event.reception}
+		coupleNames={coupleNames}
+	/>
+	
+	<Gifts gifts={weddingConfig.gifts} />
+	
+	<Confirmation 
+		confirmation={weddingConfig.confirmation}
+		coupleNames={coupleNames}
+	/>
+	
+	<DressCode dressCode={weddingConfig.dressCode} />
+</Layout>

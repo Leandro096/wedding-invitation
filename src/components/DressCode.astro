@@ -1,0 +1,85 @@
+---
+export interface Props {
+  dressCode: {
+    title: string;
+    description: string;
+    restrictions: string;
+    note: string;
+  };
+}
+
+const { dressCode } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Dress code section -->
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl md:text-4xl font-primary font-bold text-primary mb-6">
+          {dressCode.title}
+        </h2>
+        
+        <div class="bg-white rounded-lg shadow-lg p-8 border border-secondary">
+          <p class="text-lg md:text-xl font-secondary text-text leading-relaxed mb-4">
+            {dressCode.description}
+          </p>
+          
+          <!-- Dress code icons and restrictions -->
+          <div class="flex flex-wrap justify-center items-center gap-8 mb-6">
+            <!-- Formal attire icons -->
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M4 3a2 2 0 100 4h1.5L5 8.5V10a1 1 0 001 1h8a1 1 0 001-1V8.5L14.5 7H16a2 2 0 100-4H4z"/>
+                  <path d="M6 12a1 1 0 011-1h6a1 1 0 011 1v6H6v-6z"/>
+                </svg>
+              </div>
+              <span class="text-sm font-secondary text-text">Formal</span>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 2L3 7v11a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V7l-7-5z"/>
+                </svg>
+              </div>
+              <span class="text-sm font-secondary text-text">Elegante</span>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <span class="text-sm font-secondary text-text">Especial</span>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <p class="text-md font-secondary text-primary font-semibold">
+              {dressCode.restrictions}
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Adults only notice -->
+      <div class="text-center fade-in">
+        <div class="bg-accent rounded-lg p-6 border border-secondary">
+          <div class="flex items-center justify-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+          <p class="text-lg font-secondary text-text">
+            {dressCode.note}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

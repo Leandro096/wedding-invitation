@@ -1,0 +1,72 @@
+---
+export interface Props {
+  couple: {
+    partner1: { name: string; fullName: string };
+    partner2: { name: string; fullName: string };
+  };
+  date: {
+    dayName: string;
+    month: string;
+    year: string;
+    day: string;
+    time: string;
+    period: string;
+  };
+  heroImage?: string;
+}
+
+const { couple, date, heroImage = "https://images.pexels.com/photos/1024977/pexels-photo-1024977.jpeg?auto=compress&cs=tinysrgb&w=800" } = Astro.props;
+---
+
+<section class="hero-section relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat parallax" style={`background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${heroImage})`}>
+  <div class="container mx-auto px-4 text-center text-white">
+    <!-- Nombres de los novios -->
+    <div class="fade-in">
+      <h1 class="font-primary text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+        {couple.partner1.name}
+        <span class="block text-2xl md:text-4xl lg:text-5xl font-light my-2">&</span>
+        {couple.partner2.name}
+      </h1>
+    </div>
+    
+    <!-- Fecha del evento -->
+    <div class="fade-in mt-8">
+      <div class="inline-block bg-white bg-opacity-90 text-text rounded-lg p-6 md:p-8 shadow-lg">
+        <div class="text-center">
+          <div class="text-lg md:text-xl font-secondary mb-2">{date.dayName}</div>
+          <div class="text-2xl md:text-3xl font-primary font-bold">{date.month}</div>
+          <div class="text-4xl md:text-6xl font-primary font-bold text-primary my-2">{date.day}</div>
+          <div class="text-2xl md:text-3xl font-primary font-bold">{date.year}</div>
+          <div class="mt-4 pt-4 border-t border-secondary">
+            <div class="text-xl md:text-2xl font-secondary">
+              {date.time} <span class="text-lg">{date.period}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Decorative elements -->
+    <div class="absolute top-10 left-10 w-16 h-16 border-2 border-white opacity-30 rotate-45 float"></div>
+    <div class="absolute bottom-10 right-10 w-12 h-12 border-2 border-white opacity-30 rotate-45 float" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 left-5 w-8 h-8 border border-white opacity-40 rounded-full float" style="animation-delay: 2s;"></div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+        <div class="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .fade-in:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .fade-in:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+  }
+</style>
