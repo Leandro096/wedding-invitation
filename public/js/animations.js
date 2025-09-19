@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Parallax effect for hero section
-  const hero = document.querySelector('.hero-section');
+  /* const hero = document.querySelector('.hero-section');
   if (hero) {
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       const rate = scrolled * -0.5;
       hero.style.transform = `translateY(${rate}px)`;
     });
-  }
+  } */
 
   // Add scroll-triggered classes
   window.addEventListener('scroll', () => {
